@@ -16,7 +16,8 @@
     "dev": "concurrently -k -n js,json,server -c green,yellow,cyan \"npm run st-front-end\" \"npm run st-back-end\"",
     "st-front-end": "cd ./frontend && npm run start",
     "st-back-end": "nodemon index.ts",
-    "build": "npx tsc"
+    "install-front-end": "cd ./frontend && npm install",
+    "install-all": "concurrently -k -n js,json,server -c green,yellow,cyan \"npm i\" \"npm run install-front-end\""
   },
   "repository": {
     "type": "git",
