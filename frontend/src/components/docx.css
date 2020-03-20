@@ -1,0 +1,45 @@
+.CKEditor-con {
+    width: 100%;
+    height: 100%;
+}
+
+.CKEditor-list {
+    width: 30%;
+    height: 100%;
+    list-style: none;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.CKEditor-list li {
+    border: 1px solid var(--ck-color-base-border);
+    border-right: none;
+    border-top: none;
+    padding: .5rem .5rem;
+    line-height: 23px;
+    font-size: 14px;
+}
+
+
+.CKEditor-main-con {
+    width: 70%;
+    height: 100%;
+    float: right;
+    overflow: auto;
+}
+
+.saveBtn {
+    border-radius: .5rem;
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+    z-index: 999999;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: .5rem 1rem;
+}
+
+.saveBtn:hover {
+    border: 1px solid rgba(0, 0, 0, .5);
+}

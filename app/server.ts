@@ -1,6 +1,7 @@
 
-import { Express, Request, Response } from "express";
+import express, { Express, Request, Response } from "express";
 import path from 'path';
+import updateFile from './updateFile';
 
 export class Server {
 
@@ -8,6 +9,7 @@ export class Server {
 
     constructor(app: Express) {
         this.app = app;
+        app.use(express.static('../dist'));
         app.all('*', function (req, res, next) {
             // res.header("Access-Control-Allow-Origin", "http://192.168.0.168:4500");
             res.header("Access-Control-Allow-Origin", "http://10.193.17.26:3000");
@@ -18,6 +20,10 @@ export class Server {
         this.app.get("/api", (req: Request, res: Response): void => {
             res.send("You have reached the API!");
         });
+        this.app.post("/api/updateFile", (req, res) => updateFile.update(req, res))
+        // this.app.get("/StoreWordFiles", (req: Request, res: Response): void => {
+        //     res.send("You have reached the API!");
+        // });
     }
 
     public start(port: number): void {
