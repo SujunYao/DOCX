@@ -9,10 +9,9 @@ export class Server {
 
     constructor(app: Express) {
         this.app = app;
-        app.use(express.static('../dist'));
+        app.use(express.static('dist'));
         app.all('*', function (req, res, next) {
-            // res.header("Access-Control-Allow-Origin", "http://192.168.0.168:4500");
-            res.header("Access-Control-Allow-Origin", "http://10.193.17.26:3000");
+            res.header("Access-Control-Allow-Origin", "http://10.107.22.173:3000");
             res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.header("Access-Control-Allow-Methods", "PUT,POST,GET");
             next();
